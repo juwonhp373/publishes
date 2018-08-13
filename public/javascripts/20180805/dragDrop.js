@@ -1,6 +1,6 @@
 const $input = $('.input-field');
 
-$input.on('click', function () {
+$input.on('click', function (e) {
   const $this = $(this);
   const $search = $input.find('input');
   const $cover = $('.nav-cover-zone');
@@ -9,32 +9,26 @@ $input.on('click', function () {
   $cover.attr('type', 'input');
   $logo.attr('type', 'input');
   $this.attr('type', 'input');
+  e.stopPropagation();
 
-})
+  $('body').on('click', function () {
+    $cover.attr('type', '');
+    $logo.attr('type', '');
+    $this.attr('type', '');
+  });
+});
 
 
-const $profile = $('.profile-field');
+const $profile = $('.nav-profile-field');
+const $profileCloser = $('.logout-field > .closer');
+const $logoutField = $('.logout-field');
 
 $profile.on('click', function () {
-  const $logout = $('.logout-field');
-  const attr = $logout.attr('type');
-  $logout.attr('type', attr === 'false' ? 'true' : 'false')
+  $logoutField.attr('type', 'true');
+});
 
-})
-
-
-const $users = $('i.fas.fa-users');
-
-$users.on('click', function () {
-  const $sidebar = $('.side-bar-cover');
-  $sidebar.attr('type', 'true');
-})
-
-const $sidebar = $('.side-bar-cover');
-
-$sidebar.on('click', function () {
-  const $this = $(this);
-  $this.attr('type', 'false');
+$profileCloser.on('click', function () {
+  $logoutField.attr('type', 'false');
 });
 
 
@@ -43,23 +37,43 @@ const $th = $('.icon-button-field');
 $th.on('click', function () {
   const $this = $(this);
   const attr = $this.attr('type');
-  if(attr === 'list' || attr === 'card')
+  if (attr === 'list' || attr === 'card')
     $this.attr('type', attr === 'card' ? 'list' : 'card');
   else
     $this.attr('type', attr === 'down' ? 'up' : 'down');
-})
+});
 
 
-const $cog = $('i.fas.fa-user-cog')
+// users
 
-$cog.on('click', function () {
+const $users = $('.icon-button-field[command=users]');
+
+$users.on('click', function () {
   const $condition = $('.condition-bar-field');
   let attr = $condition.attr('type');
   $condition.attr('type', attr === 'true' ? 'false' : 'true');
   $('.changing-field').attr('type', attr === 'true' ? 'false' : 'true');
-})
+});
 
-let sidebar = document.getElementById('.left-side-bar');
+// users end
+
+
+// side bar
+
+const $cog = $('.icon-button-field[command=cog]');
+const $sidebar = $('.side-bar-cover');
+$cog.on('click', function () {
+  const $sidebar = $('.side-bar-cover');
+  $sidebar.attr('type', 'true');
+});
+
+$('.full-screen-blocker').on('click', function () {
+  $sidebar.attr('type', 'false');
+});
+
+// side bar end
+
+// let sidebar = document.getElementById('.left-side-bar');
 
 // window.onclick = function (event) {
 //   if(event.target === sidebar) {
