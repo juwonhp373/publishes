@@ -143,8 +143,8 @@ body {
               box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.3); }
             .side-bar-cover .left-side-bar .scroll-cover .category-card-grid .category-card-outer .category-card .icon-group {
               width: 46px;
-              font-size: 48px;
-              text-align: left; }
+              font-size: 36px;
+              text-align: center; }
               .side-bar-cover .left-side-bar .scroll-cover .category-card-grid .category-card-outer .category-card .icon-group .i {
                 font-size: inherit;
                 line-height: 48px;

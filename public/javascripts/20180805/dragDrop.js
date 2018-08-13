@@ -32,15 +32,17 @@ $profileCloser.on('click', function () {
 });
 
 
-const $th = $('.icon-button-field');
-
+const $th = $('.icon-button-field[command=grid]');
+const $cardPart = $('.card-part');
 $th.on('click', function () {
   const $this = $(this);
   const attr = $this.attr('type');
-  if (attr === 'list' || attr === 'card')
+  if (attr === 'list' || attr === 'card') {
     $this.attr('type', attr === 'card' ? 'list' : 'card');
-  else
+    $cardPart.attr('type', attr === 'card' ? 'list' : 'square');
+  } else {
     $this.attr('type', attr === 'down' ? 'up' : 'down');
+  }
 });
 
 
