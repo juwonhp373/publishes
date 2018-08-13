@@ -1,0 +1,115 @@
+html
+	head
+		link(rel='stylesheet', href='/stylesheets/20180805/dragDrop.css')
+		link(link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons',
+		rel='stylesheet')
+		script(src="https://code.jquery.com/jquery-3.3.1.js",
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
+		crossorigin="anonymous")
+
+	body
+		.side-bar-cover(type='true')
+			.left-side-bar
+				//.color-change-button
+				.profile-field.flex.align-center
+					.profile-photo
+					.name-email-cover.flex-1
+						.nick-name Juwon Hong
+						.email juwonhp373@gmail.com
+				.scroll-cover
+					.menu-theme.flex.flex-1 저장공간 관리
+					.storage-grid.flex
+						.storage-part.flex
+							.image-cell
+							.text-cell
+							.code-cell
+							.soun
+						.storage-discription-part
+					.menu-theme.flex.flex-1 카테고리
+					.category-card-grid
+					.menu-theme
+					.menu-theme
+					.menu-theme
+					.menu-theme
+					.menu-theme
+					.menu-theme
+					.menu-theme
+					.menu-theme
+
+
+		.nav-zone.flex.height-align-center
+			.nav-cover-zone(type='nav')
+			.logo-field(type='nav')
+				i.fab.fa-ember
+			.input-field.flex.align-center(type='nav')
+				.icon-grid.flex.align-center
+					i.fas.fa-search
+				input(placeholder='SEARCH')
+			.flex-1
+			.profile-field.flex.align-center
+				.nick-mail-cover
+					.nick-name-grid Juwon Hong
+					.email-grid juwonhp373@gmail.com
+				.profile-photo-grid
+
+			.logout-field(type='false')
+				.profile-grid.flex.height-align-center
+					.profile-photo-cell
+					.profile-info-cell.flex-1
+						.nick-name 홍주원
+						.email juwonhp373@gmail.com
+				.button-grid.flex.align-center
+					.button.flex.align-center.flex-1 Other Account Login
+					.button.flex.align-center Logout
+
+
+		.button-zone.flex.height-align-center
+			.button-cover.flex.flex-1.height-align-center
+				.icon-button-field.flex.align-center
+					i.fas.fa-users
+				.icon-button-field.flex.align-center(type='down')
+					i.fas.fa-sort-alpha-down
+					i.fas.fa-sort-alpha-up
+				.flex-1
+				.icon-button-field.flex.align-center(type='card')
+					i.fas.fa-th-list
+					i.fas.fa-th-large
+				.icon-button-field.flex.align-center
+					i.fas.fa-user-cog
+			.changing-field.flex.height-align-center(type='false')
+				.title-grid Followings
+
+		.upload-condition-zone.flex
+
+			.upload-field.flex.flex-1.align-center
+				.browse-button.flex.align-center
+					i.fas.fa-plus
+				.description-button-grid.flex.align-center
+					svg
+						rect
+					i.material-icons devices_other
+					.description Drop Files Here
+					.button.flex.align-center Browse
+
+					//.upload-cards-box.flex
+						.cards-cover
+							.card-grid
+								.photo-part
+								.file-properties-part
+						.cards-cover
+							.card-grid
+						.cards-cover
+							.card-grid
+						.cards-cover
+							.card-grid
+						.cards-cover
+							.card-grid
+						.cards-cover
+							.card-grid
+
+
+			.condition-bar-field(type='false')
+
+	script(src='/javascripts/20180805/dragDrop.js')

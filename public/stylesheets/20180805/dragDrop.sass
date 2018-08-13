@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai:400,500,700|Roboto:400,500,700')
+@import '../lib/color'
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  background: #2ABFBD
+  position: relative
+  font-family: Hind Madurai, sans-serif
+
+$zone-padding: 30px
+
+.side-bar-cover
+  position: fixed
+  background: rgba(0, 0, 0, 0.5)
+  width: 100%
+  height: 100%
+  //display: none
+  z-index: 1000
+  opacity: 0
+  transition: opacity .3s
+  pointer-events: none
+  &[type='true']
+    opacity: 1
+    pointer-events: unset
+  .left-side-bar
+    position: fixed
+    background: lightgray
+    width: 400px
+    height: 100%
+    transition: width .3s
+    //overflow: hidden
+    .profile-field
+      flex-flow: column
+      margin: 40px 40px 20px
+      .profile-photo
+        width: 80px
+        height: 80px
+        border-radius: 50%
+        border: 1px solid white
+        background: #D9352A
+        cursor: pointer
+      .name-email-cover
+        height: fit-content
+        width: 220px
+        border-right: 1px solid white
+        border-left: 1px solid white
+        cursor: pointer
+        margin: 10px
+        &:hover
+          text-decoration: underline white
+        .nick-name
+          text-align: center
+          font-size: 20px
+        .email
+          text-align: center
+    .scroll-cover
+      width: 100%
+      height: calc(100% - 210px)
+      background: black
+      padding: 10px
+      overflow: auto
+      .menu-theme
+        background: white
+        height: 100px
+      .storage-grid
+        height: 100px
+        background: #00B7FF
+        .storage-part
+          width: 90%
+          height: 20px
+          background: black
+          margin: auto
+          border-radius: 5px
+        .storage-discription-part
+      .category-card-grid
+
+$nav-height: 70px
+.nav-zone
+  height: $nav-height
+  background: white
+  padding: 0 ($zone-padding - 8px) 0 $zone-padding
+  position: relative
+  .logo-field
+    font-size: 50px
+    color: #D9352A
+    transition: width .9s
+    &[type='input']
+      width: 0
+      i
+        display: none
+  .input-field
+    margin: 0 20px
+    color: $md-red-600
+    border-bottom: 1px solid #D9352A
+    z-index: 10
+    transition: margin .9s
+    &[type='input']
+      margin: 0
+      font-size: 20px
+      input
+        width: calc(100vw * 0.6)
+        font-size: 20px
+    .icon-grid
+      width: 30px
+      height: 30px
+      cursor: pointer
+    input
+      margin: 0 10px
+      outline: none
+      border: none
+      width: 200px
+      height: 30px
+      font-size: 15px
+      transition: width .3s
+
+  .nav-cover-zone
+    width: 0
+    height: 100%
+    background: rgba(255, 255, 255, 0.8)
+    position: absolute
+    top: 0
+    left: 0
+    transition: width .2s
+    &[type='input']
+      width: 100%
+
+  .profile-field
+    border-radius: 5px
+    padding: 5px 8px
+    transition: border .3s
+    cursor: pointer
+    border: 1px solid rgba(217, 53, 42, 0)
+    &:hover
+      //background: rgba(217, 53, 42, 0.3)
+      border: 1px solid rgba(217, 53, 42, 0.3)
+    .nick-mail-cover
+      margin-right: 10px
+      text-align: right
+      .nick-name-grid
+        font-size: 15px
+      .email-grid
+        font-size: 12px
+    .profile-photo-grid
+      border-radius: 50%
+      height: 40px
+      width: 40px
+      border: 1px solid white
+      background: #D9352A
+
+  .logout-field
+    position: absolute
+    top: 70px
+    right: 25px
+    width: 0
+    height: fit-content
+    z-index: 100
+    background: #ededed
+    border-radius: 5px
+    display: none
+    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.3)
+    transition: width .3s
+    &[type='true']
+      width: 250px
+      display: unset
+    .profile-grid
+      width: 100%
+      height: 120px
+      background: #ededed
+      padding: 0 10px
+      .profile-photo-cell
+        border-radius: 50%
+        width: 100px
+        height: 100px
+        background: url("/images/user.png")
+        background-size: cover
+        background-position: center
+        margin-right: 10px
+        border: 1px solid white
+      .profile-info-cell
+        height: fit-content
+        font-size: 12px
+      .nick-name
+      .email
+    .button-grid
+      padding: 2px
+      .button
+        margin: 2px
+        padding: 0 10px
+        width: fit-content
+        height: 40px
+        border-radius: 5px
+        background: $md-red-600
+        color: white
+        cursor: pointer
+        transition: background .3s
+        &:hover
+          background: $md-red-800
+
+$button-height: 50px
+.button-zone
+  height: $button-height
+  background: #dddddd
+  color: rgba(100, 100, 100, 0.8)
+  .button-cover
+    padding: 0 ($zone-padding - 13px)
+  .icon-button-field
+    height: 100%
+    font-size: 20px
+    padding: 0 15px
+    transition: color .5s
+    cursor: pointer
+    &:hover
+      color: $md-red-600
+    &[type='card']
+      i.fas.fa-th-list
+        display: none
+    &[type='list']
+      i.fas.fa-th-large
+        display: none
+    &[type='down']
+      i.fas.fa-sort-alpha-up
+        display: none
+    &[type='up']
+      i.fas.fa-sort-alpha-down
+        display: none
+  .changing-field
+    width: 0px
+    height: 80%
+    transition: width .3s
+    overflow: hidden
+    &[type='true']
+      width: 250px
+      border-left: 2px solid rgba(0, 0, 0, 0.3)
+      .title-grid
+        opacity: 1
+    .title-grid
+      font-size: 20px
+      margin: 0 30px
+      opacity: 0
+      color: gray
+
+
+$loading-height: 80px
+.upload-condition-zone
+  height: calc(100% - #{$nav-height} - #{$button-height})
+  //background: white
+  // 스크롤 원인 일단 바꿈 해결
+  background: #9fa8da
+  .upload-field
+    height: 100%
+    background: white
+    padding: 30px
+    //화면 크기에 따라 padding 따로 주고싶다.
+    position: relative
+    .browse-button
+      position: fixed
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      bottom: 25px
+      right: 35px
+      background: $md-red-600
+      color: white
+      font-size: 20px
+      transition: all .4s
+      box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.3)
+      z-index: 100
+      cursor: pointer
+      i
+        transition: transform .3s
+      &:hover
+        background: $md-red-800
+        i
+          transform: rotate(90deg)
+
+    .upload-box
+      background: white
+      height: 100%
+      border-radius: 10px
+      //border: 1px solid lightgray
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5)
+      position: relative
+      //border: 10px dot-dot-dash gray
+    .description-button-grid
+      flex-flow: column
+      svg
+        width: 400px
+        height: 500px
+        position: absolute
+        pointer-events: none
+        rect
+          width: 390px
+          height: 460px
+          fill: #ededed
+          stroke-dasharray: 50, 10 //30, 20, 0, 20
+          stroke-width: 4px
+          stroke-linecap: round
+          stroke: lightgray
+          x: 3px
+          y: 3px
+
+      i
+        font-size: 300px
+        color: lightgray
+        height: 280px
+        z-index: 10
+      .description
+        font-size: 30px
+        color: gray
+        z-index: 10
+      .button
+        z-index: 10
+        color: white
+        width: 120px
+        height: 40px
+        border-radius: 5px
+        background: $md-red-600
+        margin: 10px
+        cursor: pointer
+        transition: background .3s
+        &:hover
+          background: $md-red-800
+    .upload-cards-box
+      position: absolute
+      width: 100%
+      height: fit-content
+      max-height: 100%
+      background: rgba(0, 0, 0, 0.5)
+      padding: 20px 10px
+      flex-flow: wrap
+      .cards-cover
+        width: 250px
+        height: 200px
+        padding: 0 10px 20px 10px
+        .card-grid
+          width: 100%
+          height: 100%
+          background: white
+          border-radius: 5px
+          .photo-part
+            height: 140px
+            background: #D9352A
+            border-radius: 5px 5px 0 0
+          .file-properties-part
+
+
+
+  .condition-bar-field
+    height: 100%
+    width: 0
+    //opacity: 0
+    //pointer-events: none
+    background: #D9352A
+    transition: width .3s
+    &[type='true']
+      width: 250px
+      //opacity: 1
+      //pointer-events: unset
+
+.flex
+  display: flex
+.flex-1
+  flex: 1
+.align-center
+  justify-content: center
+  align-items: center
+.height-align-center
+  align-items: center
