@@ -10,10 +10,9 @@ html
 		crossorigin="anonymous")
 
 	body
-		.side-bar-cover(type='false')
+		.side-bar-cover(type='true')
 			.full-screen-blocker
 			.left-side-bar
-				//.color-change-button
 				.profile-field.flex.align-center
 					.profile-photo
 					.name-email-cover.flex-1
@@ -22,12 +21,13 @@ html
 				.scroll-cover
 					.menu-theme.flex.flex-1 저장공간 관리
 					.storage-grid
+						.used-storage-part.flex-1 5.5GB / 10GB
 						.storage-part.flex
 							.cell.type-image(style='width:5%')
-							.cell.type-text(style='width:20%')
-							.cell.type-code(style='width:2%')
-							.cell.type-video(style='width:8%')
-							.cell.type-sound(style='width:10%')
+							.cell.type-code(style='width:20%')
+							.cell.type-text(style='width:2%')
+							.cell.type-sound(style='width:8%')
+							.cell.type-video(style='width:10%')
 							.cell.type-etc(style='width:16%')
 
 						.storage-description-part
@@ -35,25 +35,28 @@ html
 								.box.type-image
 								.text IMAGE <i>5%</i>
 							.category
+								.box.type-code
+								.text APPLICATION <i>2%</i>
+							.category
 								.box.type-text
 								.text TEXT <i>20%</i>
 							.category
-								.box.type-code
-								.text CODE <i>2%</i>
+								.box.type-sound
+								.text AUDIO <i>10%</i>
 							.category
 								.box.type-video
 								.text VIDEO <i>8%</i>
-							.category
-								.box.type-sound
-								.text SOUND <i>10%</i>
 							.category
 								.box.type-etc
 								.text ETC <i>16%</i>
 					.line
 					.menu-theme.flex.flex-1 카테고리
+						.reset-button.flex.align-center
+							.i.fas.fa-undo
 					.category-card-grid
-						.category-card-outer
+						.category-card-outer(type='deselected')
 							.category-card.type-image
+								.category-card-cover
 								.text-group
 									.name IMAGE
 									.desc-group
@@ -61,8 +64,19 @@ html
 										.capacity / 38.35GB
 								.icon-group
 									.i.fas.fa-image.type-image-color
+						.category-card-outer(type='deselected')
+							.category-card.type-code
+								.category-card-cover
+								.text-group
+									.name APPLICATION
+									.desc-group
+										.count 300
+										.capacity / 38.35GB
+								.icon-group
+									.i.fas.fa-code.type-code-color
 						.category-card-outer
 							.category-card.type-text
+								.category-card-cover
 								.text-group
 									.name TEXT
 									.desc-group
@@ -70,17 +84,19 @@ html
 										.capacity / 38.35GB
 								.icon-group
 									.i.fas.fa-font.type-text-color
-						.category-card-outer
-							.category-card.type-code
+						.category-card-outer(type='deselected')
+							.category-card.type-sound
+								.category-card-cover
 								.text-group
-									.name CODE
+									.name AUDIO
 									.desc-group
 										.count 300
 										.capacity / 38.35GB
 								.icon-group
-									.i.fas.fa-code.type-code-color
-						.category-card-outer
+									.i.fas.fa-music.type-sound-color
+						.category-card-outer(type='deselected')
 							.category-card.type-video
+								.category-card-cover
 								.text-group
 									.name VIDEO
 									.desc-group
@@ -88,17 +104,9 @@ html
 										.capacity / 38.35GB
 								.icon-group
 									.i.fas.fa-video.type-video-color
-						.category-card-outer
-							.category-card.type-sound
-								.text-group
-									.name SOUND
-									.desc-group
-										.count 300
-										.capacity / 38.35GB
-								.icon-group
-									.i.fas.fa-music.type-sound-color
-						.category-card-outer
+						.category-card-outer(type='deselected')
 							.category-card.type-etc
+								.category-card-cover
 								.text-group
 									.name ETC
 									.desc-group
@@ -117,22 +125,27 @@ html
 					i.fas.fa-search
 				input(placeholder='SEARCH')
 			.flex-1
-			.nav-profile-field.flex.align-center(type='logout')
+			.nav-profile-field.flex.align-center(type='login')
+				.login-logout-cover.flex.align-center
+					i.fas.fa-power-off
 				.nick-mail-cover
 					.nick-name-grid Juwon Hong
 					.email-grid juwonhp373@gmail.com
-				.profile-photo-grid
+				.login-button.flex.align-center
+					i.fas.fa-user-astronaut
+				.profile-photo-grid.align-center
 
-			.logout-field(type='false')
-				.i.material-icons.closer close
-				.profile-grid.flex.height-align-center
-					.profile-photo-cell
-					.profile-info-cell.flex-1
-						.nick-name 홍주원
-						.email juwonhp373@gmail.com
-				.button-grid.flex.align-center
-					.button.flex.align-center.flex-1 Other Account Login
-					.button.flex.align-center Logout
+
+			//사용하지 않는 logout-toast
+			//.logout-field(type='false')
+			//	.i.closer.fas.fa-times
+			//	.profile-grid.flex.height-align-center
+			//		.profile-photo-cell
+			//		.profile-info-cell.flex-1
+			//			.nick-name Juwon Hong
+			//			.email juwonhp373@gmail.com
+			//	.button-grid.flex.align-center
+			//		.button.flex.align-center Logout
 
 
 		.button-zone.flex.height-align-center
@@ -149,7 +162,7 @@ html
 				.icon-button-field.flex.align-center(command='users')
 					i.fas.fa-users
 			.changing-field.flex.height-align-center(type='false')
-				.title-grid Followings
+				.title-grid Friends
 
 		.browse-button.flex.align-center
 			i.fas.fa-plus
@@ -162,11 +175,11 @@ html
 					.description Drop Files Here
 					.button.flex.align-center Browse
 
-			//list
+			//square
 			.card-part.flex(type='square')
 				.card-cover-cell
 					.sights-card-cell
-						.sights-photo-div
+						.sights-photo-div.flex.align-center.type-sound-color
 							.hover-dark-background
 							.i.fas.fa-music
 						.sights-content-div.flex.align-center
@@ -175,8 +188,72 @@ html
 								.text.desc SOUND / 30KB
 							.download-icon
 								i.fas.fa-download
-						.i.material-icons.delete delete
-			// square
+						.i.fas.fa-trash-alt
+
+				.card-cover-cell
+					.sights-card-cell
+						.sights-photo-div.flex.align-center.type-image-color
+							.hover-dark-background
+							.i.fas.fa-image
+						.sights-content-div.flex.align-center
+							.content.flex-1
+								.text.bold FILE NAME HERE
+								.text.desc SOUND / 30KB
+							.download-icon
+								i.fas.fa-download
+						.i.fas.fa-trash-alt
+
+				.card-cover-cell
+					.sights-card-cell
+						.sights-photo-div.flex.align-center.type-etc-color
+							.hover-dark-background
+							.i.fas.fa-file
+						.sights-content-div.flex.align-center
+							.content.flex-1
+								.text.bold FILE NAME HERE
+								.text.desc SOUND / 30KB
+							.download-icon
+								i.fas.fa-download
+						.i.fas.fa-trash-alt
+
+				.card-cover-cell
+					.sights-card-cell
+						.sights-photo-div.flex.align-center.type-video-color
+							.hover-dark-background
+							.i.fas.fa-video
+						.sights-content-div.flex.align-center
+							.content.flex-1
+								.text.bold FILE NAME HERE
+								.text.desc SOUND / 30KB
+							.download-icon
+								i.fas.fa-download
+						.i.fas.fa-trash-alt
+
+				.card-cover-cell
+					.sights-card-cell
+						.sights-photo-div.flex.align-center.type-code-color
+							.hover-dark-background
+							.i.fas.fa-code
+						.sights-content-div.flex.align-center
+							.content.flex-1
+								.text.bold FILE NAME HERE
+								.text.desc SOUND / 30KB
+							.download-icon
+								i.fas.fa-download
+						.i.fas.fa-trash-alt
+
+				.card-cover-cell
+					.sights-card-cell
+						.sights-photo-div.flex.align-center.type-text-color
+							.hover-dark-background
+							.i.fas.fa-font
+						.sights-content-div.flex.align-center
+							.content.flex-1
+								.text.bold FILE NAME HERE
+								.text.desc SOUND / 30KB
+							.download-icon
+								i.fas.fa-download
+						.i.fas.fa-trash-alt
 
 			.condition-bar-field(type='false')
 				.travellers-part
@@ -184,40 +261,48 @@ html
 						.photo-div
 							.travellers-photo
 						.travellers-name-div.flex-1 Jeremy Shaw
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.kimberly
 						.travellers-name-div.flex-1 Kimberly Wales
-						.online-div.online
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.chi
 						.travellers-name-div.flex-1 Chi Chow
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.karan
 						.travellers-name-div.flex-1 Karan Sharma
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.keeri
 						.travellers-name-div.flex-1 Keeri Pervose
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.katy
 						.travellers-name-div.flex-1 Katy Gomes
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.jeff
 						.travellers-name-div.flex-1 Jeff Walton
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 					.travellers-cell.flex.align-center
 						.photo-div
 							.travellers-photo.peter
 						.travellers-name-div.flex-1 Peter John
-						.online-div
+						.radio-box.flex.align-center
+							.circle
 	script(src='/javascripts/20180805/dragDrop.js')
