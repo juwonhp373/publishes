@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai:400,500,700|Questrial|Roboto:400,500,700')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  background: #7e57c2
+  font-family: Questrial, sans-serif
+
+// COVER
+.column-inner
+  padding: 0 70px
+
+
+// ZONE
+.nav-zone
+  height: 100px
+  background: white
+  padding: 0 80px
+.banner-timer-zone
+  height: 5px
+  background: lightgray
+.photo-zone
+  height: 630px
+  background: #F7F7F7
+  position: relative
+  padding: 50px
+  &:hover
+    .button-wrapper
+      opacity: 1
+      pointer-events: unset
+.filter-zone
+  background: #898989
+  height: 190px
+
+.photo-card-zone
+  width: 800px
+  //height: 200px
+  border: 2px solid #ffab00
+
+// WRAPPER
+
+.caption-wrapper
+  position: absolute
+  top: 120px
+  left: 160px
+  width: fit-content
+  height: 400px
+  .click-animation
+    position: absolute
+    top: 280px
+    width: 125px
+    height: 0px
+    background: #D9352A
+    z-index: 0
+    transition: height .8s
+    &:hover
+      height: 22px
+    //.caption
+    //  width: fit-content
+    //  height: 100%
+    //  text-decoration: underline
+    //  font-size: 14px
+    //  letter-spacing: 2.8px
+    //  line-height: 22px
+  .caption
+    width: 550px
+    font-size: 14px
+    letter-spacing: 2.8px
+    margin-top: 40px
+    line-height: 22px
+    &.title
+      font-size: 55px
+      letter-spacing: 11px
+      width: fit-content
+      background: #FEE018
+      line-height: 66px
+      margin: 0
+    &.click
+      width: fit-content
+      text-decoration: underline
+      transition: background .3s
+      cursor: pointer
+      margin-top: 50px
+      &:hover
+        background: #FEE018
+
+.button-wrapper
+  width: 90px
+  height: 90px
+  position: absolute
+  cursor: pointer
+  transition: opacity .3s
+  opacity: 0
+  pointer-events: none
+  &.before
+    left: 30px
+  &.after
+    right: 30px
+  &:hover
+    .pass-over-button-border
+      transform: rotate(135deg)
+      border: 1px solid #FEE018
+      color: #FEE018
+    .pass-over-button-field
+      color: #FEE018
+
+.filter-wrapper
+  width: 430px
+  height: 100%
+  background: white
+  padding-top: 13px
+  .filter-button
+    width: fit-content
+    height: 39px
+    padding: 14px 21px 10px 21px
+    border: 1px solid lightgray
+    margin: 0 3px
+    color: rgb(69, 69, 69)
+    font-size: 12px
+    font-family: 'Open Sans', sans-serif
+    letter-spacing: 1.6px
+    line-height: 12px
+    cursor: pointer
+    text-align: center
+    vertical-align: baseline
+
+
+// FIELD
+.logo-field
+  width: 100px
+  height: 100%
+  background-position: center !important
+  background-size: cover !important
+  .logo
+    width: 100px
+    height: 30px
+    background: url("http://zebre.thememove.com/file/2015/07/logo.png")
+    cursor: pointer
+
+.menu-field
+  height: 100%
+  justify-content: flex-end
+  font-size: 13px
+  letter-spacing: 1.4px
+  .menu-button
+    width: fit-content
+    height: 100%
+    padding: 0 30px
+    color: rgb(135, 135, 135)
+    cursor: pointer
+  .division-line
+    color: lightgray
+  i
+    color: lightgray
+    cursor: pointer
+
+.pass-over-button-field
+  width: 90px
+  height: 90px
+  position: absolute
+  transition: color .3s
+  top: 0
+  color: #b2b2b2
+  &.before
+    left: -2px
+  &.after
+    right: -2px
+  i
+    font-size: 70px
+
+.photo-card-field
+  width: 25% //calc(100% / 3)
+  //height: 200px
+  margin: 0 10px 20px
+  background-color: #ffab00
+  background-size: cover !important
+  background-position: center !important
+  //visibility: inherit; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  &.one
+    //background-image: url("http://zebre.thememove.com/file/2015/08/gallery_01.jpg")
+  &.two
+    background-image: url("http://zebre.thememove.com/file/2015/08/gallery_02.jpg")
+  &.three
+    background-image: url("http://zebre.thememove.com/file/2015/08/gallery_03.jpg")
+  img
+    width : 100%
+
+
+// ETC
+
+.pass-over-button-border
+  width: 90px
+  height: 90px
+  transition: transform .3s, border .3s
+  border: 1px solid #b2b2b2
+  cursor: pointer
+  border-radius: 3px
+  transform: rotate(45deg)
+
+.flex
+  display: flex
+.flex-1
+  flex: 1
+
+.align-center
+  justify-content: center
+  align-items: center
+
+.height-center
+  align-items: center
+
+// masonry
+
+.cell-item
+  width : 300px
+  height : 300px
+  background : #ffab00
+  border: solid 1px #333
+  &.height-2
+    height : 600px

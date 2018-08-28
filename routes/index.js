@@ -26,4 +26,9 @@ router.get('/dragdrop', function(req, res, next) {
   res.render('20180805/dragDrop', { title: 'Express' });
 });
 
+router.get('/zebre', function(req, res, next) {
+  res.render('20180821/zebre', { title: 'Express' });
+});
+
+
 module.exports = router;

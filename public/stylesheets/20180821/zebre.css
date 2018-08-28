@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Hind+Madurai:400,500,700|Questrial|Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #7e57c2;
+  font-family: Questrial, sans-serif; }
+
+.column-inner {
+  padding: 0 70px; }
+
+.nav-zone {
+  height: 100px;
+  background: white;
+  padding: 0 80px; }
+
+.banner-timer-zone {
+  height: 5px;
+  background: lightgray; }
+
+.photo-zone {
+  height: 630px;
+  background: #F7F7F7;
+  position: relative;
+  padding: 50px; }
+  .photo-zone:hover .button-wrapper {
+    opacity: 1;
+    pointer-events: unset; }
+
+.filter-zone {
+  background: #898989;
+  height: 190px; }
+
+.photo-card-zone {
+  width: 800px;
+  border: 2px solid #ffab00; }
+
+.caption-wrapper {
+  position: absolute;
+  top: 120px;
+  left: 160px;
+  width: fit-content;
+  height: 400px; }
+  .caption-wrapper .click-animation {
+    position: absolute;
+    top: 280px;
+    width: 125px;
+    height: 0px;
+    background: #D9352A;
+    z-index: 0;
+    transition: height .8s; }
+    .caption-wrapper .click-animation:hover {
+      height: 22px; }
+  .caption-wrapper .caption {
+    width: 550px;
+    font-size: 14px;
+    letter-spacing: 2.8px;
+    margin-top: 40px;
+    line-height: 22px; }
+    .caption-wrapper .caption.title {
+      font-size: 55px;
+      letter-spacing: 11px;
+      width: fit-content;
+      background: #FEE018;
+      line-height: 66px;
+      margin: 0; }
+    .caption-wrapper .caption.click {
+      width: fit-content;
+      text-decoration: underline;
+      transition: background .3s;
+      cursor: pointer;
+      margin-top: 50px; }
+      .caption-wrapper .caption.click:hover {
+        background: #FEE018; }
+
+.button-wrapper {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  cursor: pointer;
+  transition: opacity .3s;
+  opacity: 0;
+  pointer-events: none; }
+  .button-wrapper.before {
+    left: 30px; }
+  .button-wrapper.after {
+    right: 30px; }
+  .button-wrapper:hover .pass-over-button-border {
+    transform: rotate(135deg);
+    border: 1px solid #FEE018;
+    color: #FEE018; }
+  .button-wrapper:hover .pass-over-button-field {
+    color: #FEE018; }
+
+.filter-wrapper {
+  width: 430px;
+  height: 100%;
+  background: white;
+  padding-top: 13px; }
+  .filter-wrapper .filter-button {
+    width: fit-content;
+    height: 39px;
+    padding: 14px 21px 10px 21px;
+    border: 1px solid lightgray;
+    margin: 0 3px;
+    color: #454545;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1.6px;
+    line-height: 12px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: baseline; }
+
+.logo-field {
+  width: 100px;
+  height: 100%;
+  background-position: center !important;
+  background-size: cover !important; }
+  .logo-field .logo {
+    width: 100px;
+    height: 30px;
+    background: url("http://zebre.thememove.com/file/2015/07/logo.png");
+    cursor: pointer; }
+
+.menu-field {
+  height: 100%;
+  justify-content: flex-end;
+  font-size: 13px;
+  letter-spacing: 1.4px; }
+  .menu-field .menu-button {
+    width: fit-content;
+    height: 100%;
+    padding: 0 30px;
+    color: #878787;
+    cursor: pointer; }
+  .menu-field .division-line {
+    color: lightgray; }
+  .menu-field i {
+    color: lightgray;
+    cursor: pointer; }
+
+.pass-over-button-field {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  transition: color .3s;
+  top: 0;
+  color: #b2b2b2; }
+  .pass-over-button-field.before {
+    left: -2px; }
+  .pass-over-button-field.after {
+    right: -2px; }
+  .pass-over-button-field i {
+    font-size: 70px; }
+
+.photo-card-field {
+  width: 25%;
+  margin: 0 10px 20px;
+  background-color: #ffab00;
+  background-size: cover !important;
+  background-position: center !important; }
+  .photo-card-field.two {
+    background-image: url("http://zebre.thememove.com/file/2015/08/gallery_02.jpg"); }
+  .photo-card-field.three {
+    background-image: url("http://zebre.thememove.com/file/2015/08/gallery_03.jpg"); }
+  .photo-card-field img {
+    width: 100%; }
+
+.pass-over-button-border {
+  width: 90px;
+  height: 90px;
+  transition: transform .3s, border .3s;
+  border: 1px solid #b2b2b2;
+  cursor: pointer;
+  border-radius: 3px;
+  transform: rotate(45deg); }
+
+.flex {
+  display: flex; }
+
+.flex-1 {
+  flex: 1; }
+
+.align-center {
+  justify-content: center;
+  align-items: center; }
+
+.height-center {
+  align-items: center; }
+
+.cell-item {
+  width: 300px;
+  height: 300px;
+  background: #ffab00;
+  border: solid 1px #333; }
+  .cell-item.height-2 {
+    height: 600px; }
+
+/*# sourceMappingURL=zebre.css.map */

@@ -1,0 +1,69 @@
+html
+	head
+		link(rel='stylesheet', href='/stylesheets/20180821/zebre.css')
+		link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+		script(src="https://code.jquery.com/jquery-3.3.1.js",
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
+		crossorigin="anonymous")
+		script(src='https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js')
+	body
+
+		.nav-zone.flex
+			.logo-field.flex.height-center
+				.logo
+			.menu-field.flex.flex-1.height-center
+				.menu-button.flex.align-center HOME
+				.division-line /
+				.menu-button.flex.align-center ABOUT
+				.division-line /
+				.menu-button.flex.align-center LAYOUTS
+				.division-line /
+				.menu-button.flex.align-center ELEMENTS
+				.division-line /
+				.menu-button.flex.align-center CONTACT
+				.division-line /
+				.menu-button.flex.align-center BLOG
+				i.fas.fa-search
+
+		.banner-timer-zone
+
+		.photo-zone.flex.height-center
+			.caption-wrapper
+				.caption.title ZEBRE <br/>CREATIVE
+				.caption.
+					A dream is your creative vision for your life in the future. You must break out of your current comfort zone and become comfortable with the unfamiliar and the unknown.
+				//.click-animation
+				.caption.click More about us
+
+			.button-wrapper.before
+				.pass-over-button-border.flex
+				.pass-over-button-field.flex.align-center.before
+					i.material-icons keyboard_arrow_left
+			.button-wrapper.after
+				.pass-over-button-border.flex
+				.pass-over-button-field.flex.align-center.after
+					i.material-icons keyboard_arrow_right
+
+		.column-inner
+			.filter-zone.flex.align-center
+				.filter-wrapper.flex.align-center
+					.filter-button All
+					.filter-button 3D
+					.filter-button Branding
+					.filter-button Prints
+					.filter-button Web
+
+			.photo-card-zone
+				// -for(var i = 0 ; i < 10 ; i ++){
+				// .cell-item
+				// .cell-item.height-2
+				// -}
+				.photo-card-field.one
+					img(src='http://zebre.thememove.com/file/2015/08/gallery_01.jpg')
+				.photo-card-field.two
+				.photo-card-field.three
+
+		script(src='/javascripts/20180821/zebre.js')
+
